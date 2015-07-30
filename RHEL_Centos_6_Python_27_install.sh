@@ -5,9 +5,8 @@ if [[ $EUID -ne 0 ]]; then
   echo "Run Script as root or sudo" 2>&1
   exit 1
 else
-  mount /dev/sdb1 /mnt/disk2
-yum groupinstall "Development tools"
-yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel openldap-devel git-core
+yum groupinstall -y "Development tools"
+yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel openldap-devel git-core
 
 # switch to home directory
 cd ~/
